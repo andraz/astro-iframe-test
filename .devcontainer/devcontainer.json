@@ -1,0 +1,96 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
+{
+  "name": "Node.js",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers-contrib/features/prettier:1": {},
+    "ghcr.io/prulloac/devcontainer-features/bun:1": {}
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // TypeScript language server for advanced TypeScript features
+        "ms-vscode.vscode-typescript-next",
+        // Code formatter for consistent code style
+        "esbenp.prettier-vscode",
+        // Spell checker for code comments and strings
+        "streetsidesoftware.code-spell-checker",
+        // Git graph visualization tool
+        "mhutchie.git-graph",
+        // GitHub Copilot AI-powered code completion
+        "GitHub.copilot",
+        // GitHub Copilot chat integration
+        "GitHub.copilot-chat",
+        // ESLint integration for code linting
+        "dbaeumer.vscode-eslint",
+        // Git blame annotations in the editor
+        "waderyan.gitblame",
+        // GitHub Pull Request extension for GitHub integration
+        "GitHub.vscode-pull-request-github",
+        // Codiumate extension for Visual Studio Code
+        "Codium.codium",
+        // Jest extension for JavaScript testing
+        "Orta.vscode-jest",
+        // Syntax highlighting for Mermaid diagrams in Markdown
+        "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
+        // Markdown extension for Mermaid diagrams
+        "bierner.markdown-mermaid",
+        // Tailwind CSS IntelliSense and class detection
+        "bradlc.vscode-tailwindcss",
+        // Astro framework extension for Visual Studio Code
+        "astro-build.astro-vscode"
+      ],
+      "settings": {
+        // Enable GitHub Copilot everywhere
+        "github.copilot.enable": {
+          "*": true,
+          "plaintext": true,
+          "markdown": true
+        },
+
+        // Allow tailwind extension to detect classes in all strings
+        "tailwindCSS.experimental.classRegex": ["([a-zA-Z0-9\\-:]+)"],
+        // Make Jest autorun on save only after the first run was triggered manually
+        "jest.runMode": { "type": "on-save", "deferred": true },
+        // Use prettier for formatting
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "always"
+        },
+        // Enable prettier for markdown and jsonc
+        "[markdown]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[jsonc]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        // Disable codiumate advertising features which don't work for free users
+        "codium.editorButton": false,
+        // Make VSCode see .astro files as HTML
+        "files.associations": {
+          "*.astro": "html"
+        }
+      }
+    }
+  },
+
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "bun i"
+
+  // Configure tool-specific properties.
+  // "customizations": {},
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+}

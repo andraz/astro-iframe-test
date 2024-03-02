@@ -1,0 +1,5 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "integrationFolder": "tests/cypress/integration",
+  "supportFile": "tests/cypress/support/commands.js"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "my-astro-app",
+  "version": "1.0.0",
+  "description": "Astro app with Cypress component test",
+  "scripts": {
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "cypress run",
+    "cypress": "cypress open"
+  },
+  "dependencies": {
+    "astro": "^0.21.0"
+  },
+  "cypress": {
+    "baseUrl": "http://localhost:3000"
+  },
+  "devDependencies": {
+    "cypress": "^6.9.1",
+    "prettier": "^3.2.5"
+  }
+}
