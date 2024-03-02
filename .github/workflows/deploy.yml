@@ -12,9 +12,14 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Replace test script with noop 🚫
+        run: |
+          sed -i 's/"test": "echo \\"Error: no test specified\\" && exit 0"/"test": "echo \\"noop\\""/g' package.json
+
       - name: Install and Build 🔧
         run: |
           npm install -g bun
+          bun install --production
           bun run build
 
       - name: Deploy 🚀
