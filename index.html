@@ -1,0 +1,27 @@
+<!DOCTYPE html><html><head></head><body style="background-color: navy; color: white">
+    <p id="text">default xx</p>
+
+<script>
+  const testData = [
+    { text: 'test1', expected: 'Test 1 text' },
+    { text: 'test2', expected: 'Test 2 text' },
+    // Add more test data as needed
+  ]
+
+  window.addEventListener('DOMContentLoaded', event => {
+    const urlParams = new URLSearchParams(window.location.search)
+    const text = urlParams.get('text')
+    if (text) {
+      // resolve from test data
+      const txt = testData.find(t => t.text === text)
+      let element = document.getElementById('text')
+      if (txt && element) {
+        element.textContent = txt.expected
+      } else if (element) {
+        element.textContent = 'No text found'
+      }
+    }
+  })
+</script>
+
+  </body></html>
