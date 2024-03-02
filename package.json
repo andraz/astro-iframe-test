@@ -4,11 +4,11 @@
   "description": "Astro app with Cypress component test",
   "scripts": {
     "start": "npm run watch:css & astro dev",
-    "watch:css": "postcss public/styles.css -o public/output.css --watch",
+    "watch:css": "postcss ./public/styles.css -o ./public/output.css --watch",
     "test": "cypress run",
     "cypress": "cypress open",
     "build:astro": "astro build",
-    "build:css": "postcss public/styles.css -o public/output.css",
+    "build:css": "postcss ./public/styles.css -o ./public/output.css",
     "build": "npm run build:astro && npm run build:css",
     "preview": "astro preview"
   },
